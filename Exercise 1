@@ -1,0 +1,5 @@
+DECLARE @g1 geometry  
+DECLARE @g2 geometry;  
+SET @g1 = geometry::STGeomFromText('LINESTRING(0 3, 3 0, 5 3)', 0);  
+SET @g2 = geometry::STGeomFromText('MULTILINESTRING((5 3, 3 0), (0 3, 3 0))', 0);  
+SELECT @g1.STEquals(@g2);
